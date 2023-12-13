@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# Import SVG vs Inline SVG vs Img SVG
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Import SVG
 
-In the project directory, you can run:
+https://github.com/someden/build-svg-in-react/blob/a7d599b074837dbfcf8378a0f0ba8392503c8f39/src/ImportSVG.js#L1-L5
 
-### `npm start`
+After build it will be like a bunch of `React.createElement` functions:
+https://github.com/someden/build-svg-in-react/blob/93e9f42f2f5fe630d3e22ff5b0b2ea2f52f2b0a4/build-with-import-svg/static/js/main.6c56403f.js#L3
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+And a separate SVG file, which is pretty useless: [build-with-import-svg/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg](https://github.com/someden/build-svg-in-react/blob/main/build-with-import-svg/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Inline SVG
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+https://github.com/someden/build-svg-in-react/blob/a7d599b074837dbfcf8378a0f0ba8392503c8f39/src/InlineSVG.js#L1-L11
 
-### `npm run build`
+After build it will be like a bunch of `React.createElement` functions but renamed as `jsx`:
+https://github.com/someden/build-svg-in-react/blob/93e9f42f2f5fe630d3e22ff5b0b2ea2f52f2b0a4/build-with-inline-svg/static/js/main.1a98a94c.js#L3
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Img SVG
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+https://github.com/someden/build-svg-in-react/blob/a7d599b074837dbfcf8378a0f0ba8392503c8f39/src/ImgSVG.js#L1-L5
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+After build it will be like a path to SVG file and a single `React.createElement` function for `img` tag, also renamed as `jsx`:
+https://github.com/someden/build-svg-in-react/blob/93e9f42f2f5fe630d3e22ff5b0b2ea2f52f2b0a4/build-with-img-svg/static/js/main.d155cbdc.js#L3
